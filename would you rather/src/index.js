@@ -2,9 +2,10 @@ import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-
+import 'semantic-ui-css/semantic.min.css'
 import './style.css';
 import Home from './components/home/Home';
+import LoginForm from './layouts/Login.layout';
 import Nav from './components/nav/Nav';
 import PageNotFound from './components/PageNotFound';
 
@@ -14,7 +15,7 @@ ReactDOM.render(
     <Nav/>
     <Switch>
       <Route exact path="/">
-          <Home/>
+          <LoginForm/>
       </Route>
       <Route path="*">
           <PageNotFound />
