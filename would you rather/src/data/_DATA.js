@@ -1,8 +1,8 @@
 let users = {
-  sarahedo: {
-    id: 'sarahedo',
-    name: 'Sarah Edo',
-    avatarURL: ,
+  bulma: {
+    id: 'bulma',
+    name: 'Bulma',
+    avatarURL: "https://media.comicbook.com/2018/02/bulma-db-1085539-1280x0.jpeg",
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
       "6ni6ok3ym7mf1p33lnez": 'optionTwo',
@@ -11,20 +11,20 @@ let users = {
     },
     questions: ['8xf0y6ziyjabvozdd253nd', 'am8ehyc8byjqgar0jgpub9']
   },
-  tylermcginnis: {
-    id: 'tylermcginnis',
-    name: 'Tyler McGinnis',
-    avatarURL: ,
+  gon_freecss: {
+    id: 'gon_freecss',
+    name: 'Gon Freecss',
+    avatarURL: "https://manga-kun.com/wp-content/uploads/2020/09/gon-freecss.jpg",
     answers: {
       "vthrdm985a262al8qx3do": 'optionOne',
       "xj352vofupe1dqz9emx13r": 'optionTwo',
     },
     questions: ['loxhs1bqm25b708cmbf3g', 'vthrdm985a262al8qx3do'],
   },
-  johndoe: {
-    id: 'johndoe',
-    name: 'John Doe',
-    avatarURL: ,
+  yamato: {
+    id: 'yamato',
+    name: 'Yamato',
+    avatarURL: "https://i.pinimg.com/originals/90/0c/5a/900c5a65069dfe8f19e45a8ce4a7d206.jpg",
     answers: {
       "xj352vofupe1dqz9emx13r": 'optionOne',
       "vthrdm985a262al8qx3do": 'optionTwo',
