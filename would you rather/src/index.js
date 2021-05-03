@@ -15,19 +15,17 @@ const store = configureStore();
 
 ReactDOM.render(
 	<StoreContext.Provider value={store}>
-		<React.StrictMode>
-			<Router>
-				<Nav />
-				<Switch>
-					<Route exact path="/">
-						<LoginForm />
-					</Route>
-					<Route path="*">
-						<PageNotFound />
-					</Route>
-				</Switch>
-			</Router>
-		</React.StrictMode>
+		<Router>
+			<Nav />
+			<Switch>
+				<Route exact path="/">
+					<LoginForm />
+				</Route>
+				<Route path="*">
+					<PageNotFound />
+				</Route>
+			</Switch>
+		</Router>
 	</StoreContext.Provider>,
 	document.getElementById("root")
 );

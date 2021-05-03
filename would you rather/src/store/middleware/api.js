@@ -1,36 +1,30 @@
 import axios from "axios";
 import * as actions from "../api";
+import { getUsers } from "../../data/_DATA";
 
-const api = ({dispatch}) => next => async action => {
-    
-    if(action.type !== actions.apiCallBegan.type){
-        return next(action);
-    }   
+const api = ({ dispatch }) => (next) => async (action) => {
+	if (action.type !== actions.apiCallBegan.type) {
+		return next(action);
+	}
 
-    const {url, method, data, onStart, onSuccess, OnError} = action.payload;
+	const { url, method, data, onStart, onSuccess, OnError } = action.payload;
 
-    if(onStart)
-    dispatch({type : onStart})
+	if (onStart) dispatch({ type: onStart });
 
+	next(action);
 
-    next(action);
+	try {
+		let users = await getUsers();
+		console.log("users", Object.values(users));
 
-    try {        
-    const response = await axios.request({
-        baseURL : "http://localhost:8000",
-        url,
-        method,
-        data,
-    });
+		console.log(onSuccess);
 
-    if(onSuccess) dispatch({type : onSuccess, payload: response.data});
-    else dispatch(actions.apiCallSuccess(response.data));
-    
-}catch(e) {       
-    if(OnError) dispatch({type : OnError, payload: e});
-    else  dispatch(actions.apiCallFailed(e));
-}
+		if (onSuccess) dispatch({ type: onSuccess, payload: Object.values(users) });
+		else dispatch(actions.apiCallSuccess({ status: "200" }));
+	} catch (e) {
+		if (OnError) dispatch({ type: OnError, payload: e });
+		else dispatch(actions.apiCallFailed(e));
+	}
 };
-
 
 export default api;
