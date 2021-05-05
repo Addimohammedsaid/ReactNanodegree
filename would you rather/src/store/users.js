@@ -6,8 +6,9 @@ let lastId = 0;
 const slice = createSlice({
     initialState : [],
     name : 'users',
+    list: [],
     reducers : {
-        // action => action handerls
+        // action => action handlers
         userAdded :  (users, action) => {
             users.push({
                 id : ++lastId,
